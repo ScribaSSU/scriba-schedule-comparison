@@ -1,36 +1,17 @@
+@import '../variables.scss';
+
 .header {
   display: flex;
-  align-items: center;
-  min-height: 100px;
-  padding: 0 40px;
+  height: 80px;
+  background-color: $color-white;
+  justify-content: flex-end;
 
-  background-color: $color-blue;
-
-  &__wrapper {
+  .logo {
     display: flex;
-    align-items: center;
-  }
 
-  a,
-  p {
-    color: $color-white;
-  }
-
-  ul {
-    display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
-
-    list-style: none;
-
-    li {
-      margin-right: 20px;
+    h1 {
+      margin: auto 20px;
+      font-family: 'Roboto';
     }
-  }
-
-  .main-nav__toggle {
-    display: none;
   }
 }

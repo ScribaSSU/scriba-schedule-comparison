@@ -1,6 +1,17 @@
-.footer {
-  min-height: 100px;
-  padding: 0 60px;
+@import '../variables.scss';
 
-  background-color: $color-blue;
+.footer {
+  display: flex;
+  height: 80px;
+  background-color: $color-black;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+
+    a {
+      color: $color-white;
+    }
+  }
 }
