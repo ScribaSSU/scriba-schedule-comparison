@@ -1,4 +1,5 @@
 import {createElement} from '../../utils/createElement';
+import {departmentsList, educationForm, groupNumbers} from '../../utils/data';
 
 export class AppView {
   constructor(rootElement) {
@@ -6,6 +7,7 @@ export class AppView {
     this.headerElement = null;
     this.footerElement = null;
     this.contentElement = null;
+    this.modalElement = null;
     this.wrapper = null;
   }
 
@@ -13,8 +15,9 @@ export class AppView {
     const wrapper = this.createWrapper();
     this.headerElement = this.createHeader();
     this.contentElement = this.createContent();
+    this.modalElement = this.createModalWindow();
     this.footerElement = this.createFooter();
-    wrapper.append(this.headerElement, this.contentElement, this.footerElement);
+    wrapper.append(this.headerElement, this.contentElement, this.modalElement, this.footerElement);
     this.rootElement.append(wrapper);
   }
 
@@ -36,7 +39,7 @@ export class AppView {
   createContent() {
     const content = createElement('main', ['main']);
     const containerContent = createElement('div', ['container']);
-    const btn = createElement('input', ['container__select--btn'], {'type': 'button', 'value': 'Select Settings'});
+    const btn = createElement('input', ['container__select--btn'], {'type': 'button', 'value': 'Выбрать настройки'});
     const schedules = createElement('div', ['container__schedules']);
     const firstSchedule = createElement('div', ['container__schedules--first']);
     const secondSchedule = createElement('div', ['container__schedules--second']);
@@ -44,6 +47,55 @@ export class AppView {
     containerContent.append(btn, schedules);
     content.append(containerContent);
     return content;
+  }
+
+  createModalWindow() {
+    const containerModal = createElement('div', ['modal']);
+    const title = createElement('h3', ['modal--title'], false, 'Настройки выбора');
+    const settingsContainer = createElement('div', ['settings-container']);
+    const firstOptionsContainer = this.createOptionsContainer('first');
+    const secondOptionsContainer = this.createOptionsContainer('second');
+    settingsContainer.append(firstOptionsContainer, secondOptionsContainer);
+    containerModal.append(title, settingsContainer);
+
+    return containerModal;
+  }
+
+  createOptionsContainer(order) {
+    const optionsContainer = createElement('div', ['container__option']);
+
+    const selectContainer = createElement('div', ['container__option--select'], {'id': `${order}-select`});
+    const faculties = createElement('select');
+    const labelForSelectContainer = createElement('label', ['label'], {'for': `${order}-select`}, 'Факультеты');
+    departmentsList.forEach((item) => {
+      const optionForFaculty = createElement('option', ['option'], false, item.shortName);
+      optionForFaculty.dataset.url = item.url;
+      faculties.append(optionForFaculty);
+    });
+    selectContainer.append(labelForSelectContainer, faculties);
+
+    const formEducationContainer = createElement('div', ['container__option--form'], {'id': `${order}-form`});
+    const formsEducation = createElement('select');
+    const labelForFormEducationContainer = createElement('label', ['label'], {'for': `${order}-form`}, 'Форма обучения');
+    educationForm.forEach((item) => {
+      const optionForForm = createElement('option', ['option'], false, item);
+      optionForForm.dataset.education = item;
+      formsEducation.append(optionForForm);
+    });
+    formEducationContainer.append(labelForFormEducationContainer, formsEducation);
+
+    const groupContainer = createElement('div', ['container__option--group'], {'id': `${order}-group`});
+    const groups = createElement('select');
+    const labelForGroupContainer = createElement('label', ['label'], {'for': `${order}-group`}, 'Группа');
+    groupNumbers.forEach((item) => {
+      const optionForGroups = createElement('option', ['option'], false, item);
+      optionForGroups.dataset.group = item;
+      groups.append(optionForGroups);
+    });
+    groupContainer.append(labelForGroupContainer, groups);
+
+    optionsContainer.append(selectContainer, formEducationContainer, groupContainer);
+    return optionsContainer;
   }
 
   createFooter() {
@@ -54,6 +106,4 @@ export class AppView {
     footer.append(contentFooter);
     return footer;
   }
-
-
 }
