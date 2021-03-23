@@ -1,0 +1,1 @@
+export const educationForm = ['Day', 'Evening', 'Extramural'];

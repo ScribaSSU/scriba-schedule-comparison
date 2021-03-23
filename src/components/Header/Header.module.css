@@ -1,0 +1,14 @@
+.header {
+    background-color: #FFFCF9;
+}
+
+.headerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    padding: 0 10px;
+}
