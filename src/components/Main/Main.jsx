@@ -3,14 +3,36 @@ import { connect } from 'react-redux';
 import { ActionCreator } from '../../action-creator/action-creator';
 import styles from './Main.module.css';
 
-const Main = ({ isModalOpen, onSettingsButtonClick }) => {
+const Main = ({ isModalOpen, dataScheduleFirst, dataScheduleSecond, onSettingsButtonClick }) => {
     return (
         <main className={styles.main}>
             <div className={styles.settings}>
-                <button onClick={ () => onSettingsButtonClick(!isModalOpen) } className={styles.settingsBtn}>Select Settings</button>
+                <button 
+                    className={styles.settingsBtn}
+                    disabled={isModalOpen}
+                    onClick={ () => onSettingsButtonClick(!isModalOpen) } 
+                >
+                    Select Settings
+                </button>
             </div>
             <div className={styles.scheduleContainer}>
-                <div className={styles.scheduleFirst}></div>
+                <div className={styles.scheduleFirst}>
+                    {
+                        dataScheduleFirst.map((itemDay, indexDay) => {
+                            return (
+                                <div className={styles.weekDay} key={indexDay}>
+                                    {
+                                        itemDay.map((itemData, indexData) => {
+                                            return (
+                                                <div className={styles.pair} key={indexData}></div>
+                                            );
+                                        })
+                                    }
+                                </div>
+                            );
+                        })
+                    }
+                </div>
                 <div className={styles.scheduleSecond}></div>
             </div>
         </main>
@@ -18,7 +40,9 @@ const Main = ({ isModalOpen, onSettingsButtonClick }) => {
 }
 
 const mapStateToProps = (state) => ({
-    isModalOpen: state.isModalOpen
+    isModalOpen: state.isModalOpen,
+    dataScheduleFirst: state.dataScheduleFirst,
+    dataScheduleSecond: state.dataScheduleSecond,
 });
 
 const mapDispatchToProps = (dispatch) => ({

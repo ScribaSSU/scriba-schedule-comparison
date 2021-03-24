@@ -30,5 +30,15 @@
 
 .scheduleFirst,
 .scheduleSecond {
-    display: grid;
+    display: flex;
+}
+
+.weekDay {
+    display: flex;
+    flex-direction: column;
+}
+
+.pair {
+    width: 100px;
+    height: 100px;
 }

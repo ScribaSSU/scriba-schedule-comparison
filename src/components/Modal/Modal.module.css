@@ -17,21 +17,28 @@
 }
 
 .modalMain {
-    
+    display: flex;
 }
 
 .modalMainFirst {
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 170px;
+    padding: 5px;
 }
 
 .modalMainSecond {
-
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    padding: 5px;
 }
 
 .modalBtnContainer {
-
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .modalBtn {
