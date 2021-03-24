@@ -104,3 +104,12 @@ export const time = [
         }
     },
 ];
+
+export const stylesArray = [
+    Array(8).fill(false),
+    Array(8).fill(false),
+    Array(8).fill(false),
+    Array(8).fill(false),
+    Array(8).fill(false),
+    Array(8).fill(false),
+];
