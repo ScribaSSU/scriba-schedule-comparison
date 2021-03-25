@@ -9,7 +9,7 @@ const SelectItem = (props) => {
                 id={props.id} 
                 placeholder={props.placeholder} 
                 onChange={ (event) => {
-                    props.onSelectChange(true, event.value);
+                    props.onSelectChange(true, event.value, event.label);
                 }} 
                 options={props.selectArray} 
             />

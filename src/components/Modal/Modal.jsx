@@ -86,7 +86,7 @@ const Modal = (
                         <SelectItem 
                             selectArray={dataGroupsFirst} 
                             id="groups" 
-                            placeholder="Choose course"
+                            placeholder="Choose group"
                             onSelectChange={onGroupSelectChangeFirst}
                         /> : null
                     }
@@ -115,7 +115,7 @@ const Modal = (
                             <SelectItem
                                 selectArray={dataGroupsSecond}
                                 id="groups"
-                                placeholder="Choose course"
+                                placeholder="Choose group"
                                 onSelectChange={onGroupSelectChangeSecond}
                             /> : null
                     }
@@ -191,20 +191,20 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(ActionCreator.resetValues());
     },
 
-    onFacultySelectChangeFirst: (isFacultySelectFirst, facultyUrlFirst) => {
-        dispatch(ActionCreator.setIsFacultySelectFirst(isFacultySelectFirst, facultyUrlFirst));
+    onFacultySelectChangeFirst: (isFacultySelectFirst, facultyUrlFirst, facultyHeaderFirst) => {
+        dispatch(ActionCreator.setIsFacultySelectFirst(isFacultySelectFirst, facultyUrlFirst, facultyHeaderFirst));
     },
 
-    onEducationSelectChangeFirst: (isEducationSelectFirst, educationUrlFirst) => {
-        dispatch(ActionCreator.setIsEducationSelectFirst(isEducationSelectFirst, educationUrlFirst));
+    onEducationSelectChangeFirst: (isEducationSelectFirst, educationUrlFirst, educationHeaderFirst) => {
+        dispatch(ActionCreator.setIsEducationSelectFirst(isEducationSelectFirst, educationUrlFirst, educationHeaderFirst));
     },
 
-    onCourseSelectChangeFirst: (isCourseSelectFirst, courseUrlFirst) => {
-        dispatch(ActionCreator.setIsCourseSelectFirst(isCourseSelectFirst, courseUrlFirst));
+    onCourseSelectChangeFirst: (isCourseSelectFirst, courseUrlFirst, courseHeaderFirst) => {
+        dispatch(ActionCreator.setIsCourseSelectFirst(isCourseSelectFirst, courseUrlFirst, courseHeaderFirst));
     },
 
-    onGroupSelectChangeFirst: (isGroupSelectFirst, groupUrlFirst) => {
-        dispatch(ActionCreator.setIsGroupSelectFirst(isGroupSelectFirst, groupUrlFirst));
+    onGroupSelectChangeFirst: (isGroupSelectFirst, groupUrlFirst, groupHeaderFirst) => {
+        dispatch(ActionCreator.setIsGroupSelectFirst(isGroupSelectFirst, groupUrlFirst, groupHeaderFirst));
     },
 
     getDataGroupsFirst: (facultyUrlFirst, educationUrlFirst, courseUrlFirst) => {
@@ -215,20 +215,20 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(ActionCreator.getDataScheduleFirst(facultyUrlFirst, groupUrlFirst));
     },
 
-    onFacultySelectChangeSecond: (isFacultySelectSecond, facultyUrlSecond) => {
-        dispatch(ActionCreator.setIsFacultySelectSecond(isFacultySelectSecond, facultyUrlSecond));
+    onFacultySelectChangeSecond: (isFacultySelectSecond, facultyUrlSecond, facultyHeaderSecond) => {
+        dispatch(ActionCreator.setIsFacultySelectSecond(isFacultySelectSecond, facultyUrlSecond, facultyHeaderSecond));
     },
 
-    onEducationSelectChangeSecond: (isEducationSelectSecond, educationUrlSecond) => {
-        dispatch(ActionCreator.setIsEducationSelectSecond(isEducationSelectSecond, educationUrlSecond));
+    onEducationSelectChangeSecond: (isEducationSelectSecond, educationUrlSecond, educationHeaderSecond) => {
+        dispatch(ActionCreator.setIsEducationSelectSecond(isEducationSelectSecond, educationUrlSecond, educationHeaderSecond));
     },
 
-    onCourseSelectChangeSecond: (isCourseSelectSecond, courseUrlSecond) => {
-        dispatch(ActionCreator.setIsCourseSelectSecond(isCourseSelectSecond, courseUrlSecond));
+    onCourseSelectChangeSecond: (isCourseSelectSecond, courseUrlSecond, courseHeaderSecond) => {
+        dispatch(ActionCreator.setIsCourseSelectSecond(isCourseSelectSecond, courseUrlSecond, courseHeaderSecond));
     },
 
-    onGroupSelectChangeSecond: (isGroupSelectSecond, groupUrlSecond) => {
-        dispatch(ActionCreator.setIsGroupSelectSecond(isGroupSelectSecond, groupUrlSecond));
+    onGroupSelectChangeSecond: (isGroupSelectSecond, groupUrlSecond, groupHeaderSecond) => {
+        dispatch(ActionCreator.setIsGroupSelectSecond(isGroupSelectSecond, groupUrlSecond, groupHeaderSecond));
     },
 
     getDataGroupsSecond: (facultyUrlSecond, educationUrlSecond, courseUrlSecond) => {

@@ -28,24 +28,24 @@ export const ActionCreator = {
         })
     },
 
-    setIsFacultySelectFirst: (isFacultySelectFirst, facultyUrlFirst) => ({
+    setIsFacultySelectFirst: (isFacultySelectFirst, facultyUrlFirst, facultyHeaderFirst) => ({
         type: `SET_IS_FACULTY_SELECT_FIRST`,
-        payload: { isFacultySelectFirst, facultyUrlFirst }
+        payload: { isFacultySelectFirst, facultyUrlFirst, facultyHeaderFirst }
     }),
 
-    setIsEducationSelectFirst: (isEducationSelectFirst, educationUrlFirst) => ({
+    setIsEducationSelectFirst: (isEducationSelectFirst, educationUrlFirst, educationHeaderFirst) => ({
         type: `SET_IS_EDUCATION_SELECT_FIRST`,
-        payload: { isEducationSelectFirst, educationUrlFirst }
+        payload: { isEducationSelectFirst, educationUrlFirst, educationHeaderFirst }
     }),
 
-    setIsCourseSelectFirst: (isCourseSelectFirst, courseUrlFirst) => ({
+    setIsCourseSelectFirst: (isCourseSelectFirst, courseUrlFirst, courseHeaderFirst) => ({
         type: `SET_IS_COURSE_SELECT_FIRST`,
-        payload: { isCourseSelectFirst, courseUrlFirst }
+        payload: { isCourseSelectFirst, courseUrlFirst, courseHeaderFirst }
     }),
 
-    setIsGroupSelectFirst: (isGroupSelectFirst, groupUrlFirst) => ({
+    setIsGroupSelectFirst: (isGroupSelectFirst, groupUrlFirst, groupHeaderFirst) => ({
         type: `SET_IS_GROUP_SELECT_FIRST`,
-        payload: { isGroupSelectFirst, groupUrlFirst }
+        payload: { isGroupSelectFirst, groupUrlFirst, groupHeaderFirst }
     }),
 
     getDataGroupsSecond: (facultyUrlSecond, educationUrlSecond, courseUrlSecond) => (dispatch) => {
@@ -66,24 +66,24 @@ export const ActionCreator = {
         })
     },
 
-    setIsFacultySelectSecond: (isFacultySelectSecond, facultyUrlSecond) => ({
+    setIsFacultySelectSecond: (isFacultySelectSecond, facultyUrlSecond, facultyHeaderSecond) => ({
         type: `SET_IS_FACULTY_SELECT_SECOND`,
-        payload: { isFacultySelectSecond, facultyUrlSecond }
+        payload: { isFacultySelectSecond, facultyUrlSecond, facultyHeaderSecond }
     }),
 
-    setIsEducationSelectSecond: (isEducationSelectSecond, educationUrlSecond) => ({
+    setIsEducationSelectSecond: (isEducationSelectSecond, educationUrlSecond, educationHeaderSecond) => ({
         type: `SET_IS_EDUCATION_SELECT_SECOND`,
-        payload: { isEducationSelectSecond, educationUrlSecond }
+        payload: { isEducationSelectSecond, educationUrlSecond, educationHeaderSecond }
     }),
 
-    setIsCourseSelectSecond: (isCourseSelectSecond, courseUrlSecond) => ({
+    setIsCourseSelectSecond: (isCourseSelectSecond, courseUrlSecond, courseHeaderSecond) => ({
         type: `SET_IS_COURSE_SELECT_SECOND`,
-        payload: { isCourseSelectSecond, courseUrlSecond }
+        payload: { isCourseSelectSecond, courseUrlSecond, courseHeaderSecond }
     }),
 
-    setIsGroupSelectSecond: (isGroupSelectSecond, groupUrlSecond) => ({
+    setIsGroupSelectSecond: (isGroupSelectSecond, groupUrlSecond, groupHeaderSecond) => ({
         type: `SET_IS_GROUP_SELECT_SECOND`,
-        payload: { isGroupSelectSecond, groupUrlSecond }
+        payload: { isGroupSelectSecond, groupUrlSecond, groupHeaderSecond }
     }),
 
     setModalOpen: (isModalOpen) => ({
