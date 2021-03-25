@@ -50,7 +50,7 @@ export const getDataSchedule = async (facultyUrl, groupUrl) => {
                                 },
                                 lessonTime: time.lessonTime,
                                 teacher: {
-                                    id: 0,
+                                    id: -1,
                                     surname: '',
                                     name: '',
                                     patronymic: '',

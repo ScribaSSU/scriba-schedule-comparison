@@ -59,34 +59,38 @@ const Modal = (
     return (
         <div className={styles.modalWrapper}>
             <div className={styles.modalTitle}>
-                <h3>Settings</h3>
+                <h2>Настройки</h2>
             </div>
             <div className={styles.modalMain}>
                 <div className={styles.modalMainFirst}>
                     <SelectItem 
                         selectArray={dataDepartments} 
                         id="faculties" 
-                        placeholder="Choose faculty"
+                        labelName="Факультеты"
+                        placeholder="Выберите факультет"
                         onSelectChange={onFacultySelectChangeFirst}
                     />
                     <SelectItem 
                         selectArray={educationForms} 
-                        id="educations" 
-                        placeholder="Choose education"
+                        id="educations"
+                        labelName="Обучение" 
+                        placeholder="Выберите обучение"
                         onSelectChange={onEducationSelectChangeFirst}
                     />
                     <SelectItem 
                         selectArray={courses} 
-                        id="courses" 
-                        placeholder="Choose course"
+                        id="courses"
+                        labelName="Курсы"
+                        placeholder="Выберите курс"
                         onSelectChange={onCourseSelectChangeFirst}
                     />
                     {
                         dataGroupsFirst.length !== 0 ?
                         <SelectItem 
                             selectArray={dataGroupsFirst} 
-                            id="groups" 
-                            placeholder="Choose group"
+                            id="groups"
+                            labelName="Группы"
+                            placeholder="Выберите группу"
                             onSelectChange={onGroupSelectChangeFirst}
                         /> : null
                     }
@@ -95,19 +99,22 @@ const Modal = (
                     <SelectItem
                         selectArray={dataDepartments}
                         id="faculties"
-                        placeholder="Choose faculty"
+                        labelName="Факультеты"
+                        placeholder="Выберите факультет"
                         onSelectChange={onFacultySelectChangeSecond}
                     />
                     <SelectItem
                         selectArray={educationForms}
                         id="educations"
-                        placeholder="Choose education"
+                        labelName="Обучение"
+                        placeholder="Выберите обучение"
                         onSelectChange={onEducationSelectChangeSecond}
                     />
                     <SelectItem
                         selectArray={courses}
                         id="courses"
-                        placeholder="Choose course"
+                        labelName="Курсы"
+                        placeholder="Выберите курс"
                         onSelectChange={onCourseSelectChangeSecond}
                     />
                     {
@@ -115,7 +122,8 @@ const Modal = (
                             <SelectItem
                                 selectArray={dataGroupsSecond}
                                 id="groups"
-                                placeholder="Choose group"
+                                labelName="Группы"
+                                placeholder="Выберите группу"
                                 onSelectChange={onGroupSelectChangeSecond}
                             /> : null
                     }
@@ -141,7 +149,7 @@ const Modal = (
                         resetValues();
                     }}
                 >
-                    OK
+                    Принять
                 </button>
                 <button 
                     className={styles.modalBtn} 
@@ -150,7 +158,7 @@ const Modal = (
                         resetValues();
                     }}
                 >
-                    Cancel
+                    Назад
                 </button>
             </div>
         </div>

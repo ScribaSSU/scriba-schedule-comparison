@@ -1,15 +1,15 @@
 export const educationForms = [
     {
         value: 'do',
-        label: 'Day'
+        label: 'Дневное'
     }, 
     {
         value: 'vo',
-        label: 'Evening'
+        label: 'Вечернее'
     }, 
     {
         value: 'zo',
-        label: 'Extramural'
+        label: 'Заочное'
     }
 ];
 

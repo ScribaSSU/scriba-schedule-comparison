@@ -1,10 +1,11 @@
 import React from 'react';
-import Select from 'react-select';  
+import Select from 'react-select';
+import styles from './SelectItem.module.css';
 
 const SelectItem = (props) => {
     return (
-        <>
-            <label htmlFor={props.id}>{props.id.toUpperCase()}</label>
+        <div className={styles.selectItem}>
+            <label className={styles.selectLabel} htmlFor={props.id}>{props.labelName}</label>
             <Select 
                 id={props.id} 
                 placeholder={props.placeholder} 
@@ -13,7 +14,7 @@ const SelectItem = (props) => {
                 }} 
                 options={props.selectArray} 
             />
-        </>
+        </div>
     );
 
 }

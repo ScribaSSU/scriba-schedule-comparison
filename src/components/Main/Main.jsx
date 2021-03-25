@@ -22,7 +22,11 @@ const Main = ({
         if (dataScheduleFirst.length !== 0 && dataScheduleSecond.length !== 0) {
             for (let i = 0; i < dataScheduleFirst.length; i += 1) {
                 for (let j = 0; j < dataScheduleFirst[i].length; j += 1) {
-                    if (dataScheduleFirst[i][j][0].name === dataScheduleSecond[i][j][0].name && dataScheduleFirst[i][j][0].name !== '') {
+                    if (dataScheduleFirst[i][j][0].name === dataScheduleSecond[i][j][0].name && 
+                        dataScheduleFirst[i][j][0].name !== '' && 
+                        dataScheduleFirst[i][j][0].teacher.id === dataScheduleSecond[i][j][0].teacher.id &&
+                        dataScheduleFirst[i][j][0].teacher.id !== -1
+                        ) {
                         stylesArray[i][j] = true;
                     }
                 }
@@ -40,12 +44,12 @@ const Main = ({
                     disabled={isModalOpen}
                     onClick={ () => onSettingsButtonClick(!isModalOpen) } 
                 >
-                    Select Settings
+                    Выберите настройки
                 </button>
             </div>
             <div className={styles.scheduleContainer}>
                 <div className={styles.schedule}>
-                    { dataScheduleFirst.length !== 0 ? <h3 className={styles.scheduleTitle}>{`${facultyHeaderFirst} ${educationHeaderFirst} ${courseHeaderFirst} ${groupHeaderFirst}`}</h3> : null }
+                    { dataScheduleFirst.length !== 0 ? <h3 className={styles.scheduleTitle}>{`${facultyHeaderFirst}, ${educationHeaderFirst} обучение, ${courseHeaderFirst} курс, ${groupHeaderFirst} группа`}</h3> : null }
                     <div className={styles.scheduleFirst}>
                         {
                             dataScheduleFirst.length !== 0 ?
@@ -86,7 +90,7 @@ const Main = ({
                     </div>
                 </div>
                 <div className={styles.schedule}>
-                    { dataScheduleSecond.length !== 0 ? <h3 className={styles.scheduleTitle}>{`${facultyHeaderSecond} ${educationHeaderSecond} ${courseHeaderSecond} ${groupHeaderSecond}`}</h3> : null }
+                    { dataScheduleSecond.length !== 0 ? <h3 className={styles.scheduleTitle}>{`${facultyHeaderSecond}, ${educationHeaderSecond} обучение, ${courseHeaderSecond} курс, ${groupHeaderSecond} группа`}</h3> : null }
                     <div className={styles.scheduleSecond}>
                         {
                             dataScheduleSecond.length !== 0 ?

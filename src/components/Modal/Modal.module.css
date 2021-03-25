@@ -20,17 +20,11 @@
     display: flex;
 }
 
-.modalMainFirst {
-    display: flex;
-    flex-direction: column;
-    width: 180px;
-    padding: 5px;
-}
-
+.modalMainFirst,
 .modalMainSecond {
     display: flex;
     flex-direction: column;
-    width: 180px;
+    width: 215px;
     padding: 5px;
 }
 
